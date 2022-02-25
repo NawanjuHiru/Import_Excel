@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div> 
+        <h4>Upgrade Status</h4>
+        <table>
+            <tr>
+                <th>Site Id</th>
+                <th>Sector</th>
+                <th>Upgrade Batch</th>
+                <th>Upgrade Type</th>
+                <th>Priority Area</th>
+                <th>Plan Month</th>
+                <th>Plan Week</th>
+                <th>Done Date</th>
+                <th>Status</th>
+                <th>Reason</th>
+                <th>Remarks</th>
+                <th>QOS Status</th>
+            </tr>
+            @foreach(var exc in ViewBag.ExcelList)
+            {
+        <tr>
+            <td>@exc.SiteId</td>
+            <td>@exc.Sector</td>
+            <td>@exc.UpgradeBatch</td>
+            <td>@exc.UpgradeType</td>
+            <td>@exc.PriorityArea</td>
+            <td>@exc.PlanMonth</td>
+            <td>@exc.PlanWeek</td>
+            <td>@exc.DoneDate</td>
+            <td>@exc.Status</td>
+            <td>@exc.Reason</td>
+            <td>@exc.Remarks</td>
+            <td>@exc.QOS_Status</td>
+        </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
